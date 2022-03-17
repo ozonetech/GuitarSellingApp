@@ -12,29 +12,26 @@ export default function GuitarCollection() {
     { image: require("../../../assets/photo12.png"), key: "2" },
     { image: require("../../../assets/photo13.png"), key: "3" },
     { image: require("../../../assets/photo13.png"), key: "4" },
-    { image: require("../../../assets/photo13.png"), key: "5" },
+    { image: require("../../../assets/photo12.png"), key: "5" },
     { image: require("../../../assets/photo13.png"), key: "6" },
-    { image: require("../../../assets/photo13.png"), key: "7" },
+    { image: require("../../../assets/photo11.png"), key: "7" },
     { image: require("../../../assets/photo13.png"), key: "8" },
-    { image: require("../../../assets/photo13.png"), key: "9" },
   ]);
   return (
     <View>
-      <Picker>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {people.map((item) => {
-            return (
-              <View style={styles.guitarShowView} key={item.key}>
-                <Image
-                  resizeMode="contain"
-                  style={{ width: "100%", height: "100%" }}
-                  source={item.image}
-                ></Image>
-              </View>
-            );
-          })}
-        </ScrollView>
-      </Picker>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        {people.map((item) => {
+          return (
+            <View style={styles.guitarShowView} key={item.key}>
+              <Image
+                resizeMode="contain"
+                style={{ width: "100%", height: "100%" }}
+                source={item.image}
+              ></Image>
+            </View>
+          );
+        })}
+      </ScrollView>
     </View>
   );
 }
