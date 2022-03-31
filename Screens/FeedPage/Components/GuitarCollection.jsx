@@ -1,12 +1,17 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import React from "react";
 import * as Animatable from "react-native-animatable";
 import Swiper from "react-native-swiper";
 import { useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
-import { Picker } from "@react-native-picker/picker";
+import { useRoute } from "@react-navigation/native";
+import Index from "../../GuitarCollectionDetains/Index";
+import { useNavigation } from "@react-navigation/native";
 
 export default function GuitarCollection() {
+  const Navigation = useNavigation();
+  const route = useRoute();
+  console.log(route);
   const [people, setPeople] = useState([
     { image: require("../../../assets/photo11.png"), key: "1" },
     { image: require("../../../assets/photo12.png"), key: "2" },
@@ -18,7 +23,11 @@ export default function GuitarCollection() {
     { image: require("../../../assets/photo13.png"), key: "8" },
   ]);
   return (
-    <View>
+    <Pressable
+      onPress={() =>
+        Navigation.navigate("GuitarCollectionDetains", { Guitarkey: this.key })
+      }
+    >
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {people.map((item) => {
           return (
@@ -32,7 +41,7 @@ export default function GuitarCollection() {
           );
         })}
       </ScrollView>
-    </View>
+    </Pressable>
   );
 }
 

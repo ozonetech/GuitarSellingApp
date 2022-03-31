@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Homescreen from "../Homescreen";
 import FeedPage from "../FeedPage/FeedPage";
+import Index from "../GuitarCollectionDetains/Index";
 
 export default function Navigation() {
   const Stack = createStackNavigator();
@@ -16,6 +17,10 @@ export default function Navigation() {
       >
         <Stack.Screen name="Homescreen" component={Homescreen}></Stack.Screen>
         <Stack.Screen name="Feedpage" component={FeedPage}></Stack.Screen>
+        <Stack.Screen
+          name="GuitarCollectionDetains"
+          component={Index}
+        ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

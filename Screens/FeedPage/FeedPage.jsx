@@ -9,6 +9,7 @@ import {
   Dimensions,
   FlatList,
   ScrollView,
+  Switch,
 } from "react-native";
 import React, { useState } from "react";
 import FeedHeader from "./Components/FeedHeader";
